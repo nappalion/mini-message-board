@@ -15,11 +15,13 @@ const links = [
 
 const messages = [
   {
+    id: 1,
     text: "Hi there!",
     user: "Amando",
     added: new Date(),
   },
   {
+    id: 2,
     text: "Hello World!",
     user: "Charles",
     added: new Date(),
@@ -34,10 +36,10 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/messages/:user", (req, res) => {
-  const { user } = req.params;
+app.get("/:id", (req, res) => {
+  const { id } = req.params;
 
-  const message = messages.find((message) => message.user == user);
+  const message = messages.find((message) => message.id == id);
 
   res.render("messages/message-overview", {
     title: "Mini Messageboard",
