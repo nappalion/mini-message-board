@@ -1,7 +1,14 @@
-<body>
-  <h1>Message overview:</h1>
-  <p><%=message.text%></p>
-  <p><%=message.user%></p>
-  <p><%=message.added%></p>
-  <a href="/" class="button-link">Back</a>
-</body>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="body-bg">
+    <div class="message-container">
+      <h1>Message overview:</h1>
+      <p><%=message.user%></p>
+      <p><%=message.text%></p>
+      <p><%=message.added%></p>
+      <a href="/" class="button">Back</a>
+    </div>
+  </body>
+</html>

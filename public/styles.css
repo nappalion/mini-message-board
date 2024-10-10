@@ -1,0 +1,50 @@
+body,
+html {
+  margin: 0px;
+}
+
+.message-card {
+  background-color: beige;
+  padding: 16px;
+  margin: 8px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+.button {
+  width: fit-content;
+  background-color: darkslategray;
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+nav {
+  background-color: darkslategray;
+  padding: 8px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+}
+
+.body-bg {
+  background-color: beige;
+}
+
+.message-container {
+  background-color: white;
+  padding: 16px;
+  margin: 16px;
+}
