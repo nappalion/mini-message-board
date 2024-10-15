@@ -3,4 +3,10 @@
   <p><%=message.text%></p>
   <p><%=message.added%></p>
   <a href="/user/<%=message.id%>" class="button">Open message</a>
+  <a
+    href="/user/delete/<%=message.id%>"
+    class="delete-button"
+    onclick="return confirm('Are you sure?')"
+    >Delete message</a
+  >
 </div>

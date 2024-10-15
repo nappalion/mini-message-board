@@ -11,8 +11,7 @@ async function getMessage(id) {
 }
 
 async function deleteMessage(id) {
-  const { rows } = await pool.query("SELECT * FROM messages WHERE id=$1", [id]);
-  return rows[0];
+  await pool.query("DELETE FROM messages WHERE id=$1", [id]);
 }
 
 async function insertMessage(text, username) {
@@ -27,5 +26,5 @@ module.exports = {
   getAllMessages,
   insertMessage,
   getMessage,
-  deleteMessage
+  deleteMessage,
 };

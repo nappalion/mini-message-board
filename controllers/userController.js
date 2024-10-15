@@ -36,10 +36,12 @@ async function deleteMessage(req, res) {
   const { id } = req.params;
   const message = await db.deleteMessage(id);
 
+  res.redirect("/");
 }
 
 module.exports = {
   newGet,
   getMessage,
   newPost,
+  deleteMessage
 };
