@@ -26,10 +26,14 @@ module.exports = {
 
     const message = messages.find((message) => message.id == id);
 
-    res.render("messages/message-overview", {
-      title: "Mini Messageboard",
-      links: links,
-      message: message,
-    });
+    if (message) {
+      res.render("messages/message-overview", {
+        title: "Mini Messageboard",
+        links: links,
+        message: message,
+      });
+    } else {
+      res.redirect("/");
+    }
   },
 };
