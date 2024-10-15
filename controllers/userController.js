@@ -1,39 +1,45 @@
 const { links } = require("../models/homeModel");
-const { messages, getNextId } = require("../models/userModel");
+const db = require("../db/queries");
 
-module.exports = {
-  newGet: (req, res) => {
-    res.render("form", {
+function newGet(req, res) {
+  res.render("form", {
+    title: "Mini Messageboard",
+    links: links,
+  });
+}
+
+async function newPost(req, res) {
+  const { messageText, messageUser } = req.body;
+
+  await db.insertMessage(messageText, messageUser);
+
+  res.redirect("/");
+}
+
+async function getMessage(req, res) {
+  const { id } = req.params;
+
+  const message = await db.getMessage(id);
+  console.log(message);
+  if (message) {
+    res.render("messages/message-overview", {
       title: "Mini Messageboard",
       links: links,
+      message: message,
     });
-  },
-
-  newPost: (req, res) => {
-    const { messageText, messageUser } = req.body;
-    messages.push({
-      text: messageText,
-      user: messageUser,
-      added: new Date(),
-      id: getNextId(),
-    });
-
+  } else {
     res.redirect("/");
-  },
+  }
+}
 
-  getMessage: (req, res) => {
-    const { id } = req.params;
+async function deleteMessage(req, res) {
+  const { id } = req.params;
+  const message = await db.deleteMessage(id);
 
-    const message = messages.find((message) => message.id == id);
+}
 
-    if (message) {
-      res.render("messages/message-overview", {
-        title: "Mini Messageboard",
-        links: links,
-        message: message,
-      });
-    } else {
-      res.redirect("/");
-    }
-  },
+module.exports = {
+  newGet,
+  getMessage,
+  newPost,
 };

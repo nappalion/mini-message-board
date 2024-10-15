@@ -3,6 +3,27 @@ html {
   margin: 0px;
 }
 
+.form-body {
+  background-color: beige;
+}
+
+.form-container {
+  background-color: white;
+  padding: 16px;
+  margin: 16px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+
+  width: 320px;
+}
+
+.form-container form button {
+  margin-top: 16px;
+}
 .message-card {
   background-color: beige;
   padding: 16px;

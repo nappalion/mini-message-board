@@ -1,8 +1,18 @@
-<h1>Form</h1>
-<form method="POST" action="/user/new">
-  <label for="messageUser">Name: </label>
-  <input type="text" id="messageUser" name="messageUser" />
-  <label for="messageText">Message: </label>
-  <input type="text" id="messageText" name="messageText" />
-  <button type="submit">Send my message</button>
-</form>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="form-body">
+    <div class="form-container">
+      <h1>Form</h1>
+      <form method="POST" action="/user/new">
+        <label for="messageUser">Name: </label>
+        <input type="text" id="messageUser" name="messageUser" />
+        <label for="messageText">Message: </label>
+        <input type="text" id="messageText" name="messageText" />
+        <button type="submit">Send my message</button>
+      </form>
+      <a href="/" class="button">Back</a>
+    </div>
+  </body>
+</html>
